@@ -48,13 +48,15 @@ class PontOfSale(QMainWindow):
         row = self.ui.tableDetail.rowCount()
         for p in products:
             exist_product = True
-            print(products)
+            print(p)
+            quantity = 1
+            total_line =  quantity * p['list_price']
             self.ui.tableDetail.insertRow(row)
             self.ui.tableDetail.setItem(row, 0, QTableWidgetItem(str(p['id'])))
             self.ui.tableDetail.setItem(row, 1, QTableWidgetItem(p['name']))
-            self.ui.tableDetail.setItem(row, 2, QTableWidgetItem(str(1.00)))
-            self.ui.tableDetail.setItem(row, 3, QTableWidgetItem(str(2)))
-            self.ui.tableDetail.setItem(row, 4, QTableWidgetItem(str(2)))
+            self.ui.tableDetail.setItem(row, 2, QTableWidgetItem(str(quantity)))
+            self.ui.tableDetail.setItem(row, 3, QTableWidgetItem(str(p['list_price'])))            
+            self.ui.tableDetail.setItem(row, 4, QTableWidgetItem(str(total_line)))
 
         if not exist_product:
             message.warning(self, 'Product not found').show()

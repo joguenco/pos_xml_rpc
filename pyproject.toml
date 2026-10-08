@@ -1,0 +1,20 @@
+[project]
+name = "POS"
+
+[tool.pyside6-project]
+files = [
+        "app.py",
+        "utils/message.py",
+        "utils/__init__.py",
+        ".env",
+        "requirements.txt",
+        "views/point_of_sale.py",
+        "views/point_of_sale.ui",
+        "views/company.ui",
+        "views/company.py",
+        "views/login.py",
+        "views/login.ui",
+        "views/mainwindow.py",
+        "views/mainwindow.ui",
+        "utils/client.py"
+    ]
